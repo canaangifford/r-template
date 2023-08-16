@@ -29,6 +29,8 @@ resolve the conflicts.
     cd ~/
     R
 
+then
+
     install.packages("renv")
 
 ## Components
