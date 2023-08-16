@@ -1,0 +1,13 @@
+Package: r-template
+Title: Templated R Project Skeleton
+Version: 0.0.0.9000
+Authors@R: 
+    person("Canaan", "Gifford", , "canaangifford@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Templated R Project skeleton with useful structure and packages
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: tidyverse
