@@ -11,20 +11,27 @@ Templated R Project skeleton with useful structure and packages
 2.  Just start `R` in the project directory and `renv` will begin setup!
     (Go grab a :coffee: as this will take a while…)
 
+3.  Install `tidyverse` and other dev dependencies with
+    `renv::install()`.
+
 ### Dependency Conflicts
+
+Package dependencies can sometimes conflict with local r caches.
+Typically following the suggested fixes via `renv` or homebrew will
+resolve the conflicts.
+
+#### Updating the Documentation and Using .Rmd
 
 Pandoc *may* be required to generate the README as well as use .Rmd
 files. If you are using RStudio you can ‘Knit’ or run the following via
 the cmdline. If you are not using RStudio you may have to install pandoc
 [globally](https://pandoc.org/installing.html).
 
+To update this file run:
+
     rmarkdown::render('README.Rmd', 'md_document')
 
-Package dependencies can sometimes conflict with local r caches.
-Typically following the suggested fixes via `renv` or homebrew will
-resolve the conflicts.
-
-#### *OPTIONAL* - Install the latest version of renv globally from CRAN with:
+### *OPTIONAL* - Install the latest version of renv globally from CRAN with:
 
     cd ~/
     R
