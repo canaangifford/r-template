@@ -5,14 +5,14 @@ A GitHub template for R projects — research compendium layout that supports bo
 ## Quick Start
 
 1. Click **Use this template** on GitHub to create your repo
-2. Clone it and open in VS Code or RStudio
+2. Clone it and open in RStudio or your editor of choice
 3. Open R in the project root and run:
 
 ```r
 renv::restore()
 ```
 
-That's it. All dependencies install from the lockfile.
+That's it. All dependencies install from the lockfile. On a fresh machine this takes 10–20 minutes the first time — subsequent restores are fast via the renv cache.
 
 ## Project Structure
 
@@ -27,17 +27,13 @@ That's it. All dependencies install from the lockfile.
 
 Use `R/` for functions you want to reuse across your analysis. Use `analysis/` for exploratory scripts and `.qmd` / `.Rmd` notebooks. You can ignore `tests/` entirely if this is a pure analysis project.
 
-## VS Code
+## Editor Setup
 
-The R extension is recommended automatically via `.vscode/extensions.json`. With `radian` and `httpgd` in the lockfile, you get inline plot rendering and full LSP support (autocomplete, go-to-definition, diagnostics) out of the box.
+`languageserver` and `httpgd` are included in the lockfile, so any LSP-compatible editor (VS Code, Positron, Neovim, Emacs, Zed, Helix, etc.) gets autocomplete, go-to-definition, diagnostics, and integrated plot rendering after `renv::restore()` with no additional setup.
 
-Install [radian](https://github.com/randy3k/radian) globally once:
+If you're using VS Code, `.vscode/extensions.json` will prompt you to install the R extension automatically.
 
-```sh
-pip install radian
-```
-
-Then configure VS Code to use it as the R terminal (`r.rterm.mac` / `r.rterm.linux`).
+[radian](https://github.com/randy3k/radian) is an optional enhanced R console for terminal-based workflows. It requires Python and is not needed for RStudio users.
 
 ## RStudio
 
@@ -54,7 +50,11 @@ Commit the updated `renv.lock`. Collaborators run `renv::restore()` to sync.
 
 ## Updating Your Project Name
 
-After using this template, update the `Package` field in `DESCRIPTION` and rename `rtemplate.Rproj` to match. If you're building an actual package, run `devtools::document()` to regenerate `NAMESPACE`.
+Update the `Package` field in `DESCRIPTION` and rename `rtemplate.Rproj` to match your project name.
+
+**Analysis project:** that's all you need to do — `R/`, `tests/`, and `NAMESPACE` can be left as-is or deleted entirely.
+
+**Package development:** run `devtools::document()` after adding functions to `R/` to regenerate `NAMESPACE` and documentation.
 
 ## What's in the Lockfile
 
@@ -65,8 +65,8 @@ After using this template, update the `Package` field in `DESCRIPTION` and renam
 | [usethis](https://usethis.r-lib.org/) | Project setup helpers |
 | [lintr](https://lintr.r-lib.org/) | Static code analysis |
 | [styler](https://styler.r-lib.org/) | Code formatting |
-| [languageserver](https://github.com/REditorSupport/languageserver) | VS Code R LSP |
-| [httpgd](https://github.com/nx10/httpgd) | VS Code inline plot rendering |
+| [languageserver](https://github.com/REditorSupport/languageserver) | LSP support for any compatible editor |
+| [httpgd](https://github.com/nx10/httpgd) | Editor-integrated plot rendering |
 | [rmarkdown](https://rmarkdown.rstudio.com/) | R Markdown documents |
 
 [tidyverse](https://www.tidyverse.org/) is listed as a suggested dependency in `DESCRIPTION` but not locked — install it with `renv::install("tidyverse")` and snapshot when you need it.
