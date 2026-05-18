@@ -2,6 +2,21 @@
 
 A GitHub template for R projects — research compendium layout that supports both analysis workflows and package development out of the box.
 
+## Prerequisites
+
+- **R** (≥ 4.1) — [Download](https://cloud.r-project.org/)
+- **Pandoc** — required by rmarkdown to render `.Rmd` files. RStudio bundles it; non-RStudio users install it separately:
+  ```bash
+  # macOS
+  brew install pandoc
+
+  # Windows
+  winget install JohnMacFarlane.Pandoc
+
+  # Ubuntu/Debian
+  sudo apt install pandoc
+  ```
+
 ## Quick Start
 
 1. Click **Use this template** on GitHub to create your repo
