@@ -1,2 +1,9 @@
 ^renv$
 ^renv\.lock$
+^\.renv$
+^analysis$
+^\.github$
+^\.vscode$
+^\.lintr$
+^\.editorconfig$
+^LICENSE\.md$
